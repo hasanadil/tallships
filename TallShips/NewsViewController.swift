@@ -14,6 +14,16 @@ class NewsViewController: UITableViewController {
     let city = "pwm"
     var allNews = [] as [PFObject]
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        self.tableView.estimatedRowHeight = 44
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        let newsNib = UINib(nibName: "NewsTableViewCell", bundle: nil) as UINib
+        self.tableView .registerNib(newsNib, forCellReuseIdentifier: "NewsTableViewCell")
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated);
         self.loadNews()
@@ -25,7 +35,6 @@ class NewsViewController: UITableViewController {
         query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in
-            
             if error == nil {
                 if let objects = objects as? [PFObject] {
                     for object in objects {
@@ -33,7 +42,7 @@ class NewsViewController: UITableViewController {
                     }
                     
                     self.allNews = objects
-                    self.tableView .reloadData()
+                    self.tableView.reloadData()
                 }
             } else {
                 // Log details of the failure
@@ -43,22 +52,15 @@ class NewsViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.allNews.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-        cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        cell.detailTextLabel?.numberOfLines = 0
-        cell.detailTextLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("NewsTableViewCell", forIndexPath: indexPath) as! NewsTableViewCell
         let news = allNews[indexPath.row] as PFObject
-        cell.textLabel?.text = news["title"] as? String
-        cell.detailTextLabel?.text = news["detail"] as? String
-
+        cell.setNews(news)
         return cell
     }
 }

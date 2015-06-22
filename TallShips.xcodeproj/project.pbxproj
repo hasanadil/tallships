@@ -35,6 +35,8 @@
 		9F1BCBF51B2E325400E5103C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1BCBF41B2E325400E5103C /* SystemConfiguration.framework */; };
 		9F1BCBF71B2E325A00E5103C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1BCBF61B2E325A00E5103C /* libz.dylib */; };
 		9F1BCBF91B2E326100E5103C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1BCBF81B2E326100E5103C /* libsqlite3.dylib */; };
+		9FAECF231B378A8F00875E7F /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FAECF221B378A8F00875E7F /* NewsTableViewCell.xib */; };
+		9FAECF251B378AB100875E7F /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAECF241B378AB100875E7F /* NewsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		9F1BCBF41B2E325400E5103C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9F1BCBF61B2E325A00E5103C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		9F1BCBF81B2E326100E5103C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		9FAECF221B378A8F00875E7F /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsTableViewCell.xib; path = TallShips/NewsTableViewCell.xib; sourceTree = "<group>"; };
+		9FAECF241B378AB100875E7F /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewCell.swift; path = TallShips/NewsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,9 +178,10 @@
 		9F1BCBCD1B2DE9AB00E5103C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9F1BCBFF1B2E511A00E5103C /* cell */,
 				9F1BCBB11B2DE86D00E5103C /* Main.storyboard */,
 				9F1BCBB61B2DE86D00E5103C /* LaunchScreen.xib */,
+				9FAECF221B378A8F00875E7F /* NewsTableViewCell.xib */,
+				9FAECF241B378AB100875E7F /* NewsTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -226,13 +231,6 @@
 			name = ThirdParty;
 			sourceTree = "<group>";
 		};
-		9F1BCBFF1B2E511A00E5103C /* cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = cell;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -277,6 +275,7 @@
 		9F1BCB9E1B2DE86C00E5103C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Hasan Adil";
 				TargetAttributes = {
@@ -315,6 +314,7 @@
 			files = (
 				9F1BCBB31B2DE86D00E5103C /* Main.storyboard in Resources */,
 				9F1BCBB81B2DE86D00E5103C /* LaunchScreen.xib in Resources */,
+				9FAECF231B378A8F00875E7F /* NewsTableViewCell.xib in Resources */,
 				9F1BCBB51B2DE86D00E5103C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +335,7 @@
 			files = (
 				9F1BCBD61B2E14B000E5103C /* ShipsViewController.swift in Sources */,
 				9F1BCBAC1B2DE86D00E5103C /* AppDelegate.swift in Sources */,
+				9FAECF251B378AB100875E7F /* NewsTableViewCell.swift in Sources */,
 				9F1BCBDA1B2E17CC00E5103C /* ShipViewController.swift in Sources */,
 				9F0CFFF91B311E0C00C91A7A /* NewsViewController.swift in Sources */,
 				9F1BCBD01B2DEAE500E5103C /* ScheduleViewController.swift in Sources */,

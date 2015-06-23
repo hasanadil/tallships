@@ -16,16 +16,15 @@ class ShipsViewController: UIPageViewController, UIPageViewControllerDataSource 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tickets", style: UIBarButtonItemStyle.Plain, target: self, action: "tapTickets:")
+        
         self.view.backgroundColor = UIColor.whiteColor()
         self.dataSource = self
-        
-        PFAnonymousUtils.logInWithBlock {
-            (user: PFUser?, error: NSError?) -> Void in
-            if error != nil || user == nil {
-            } else {
-                self.loadShips()
-            }
-        }
+        self.loadShips()
+    }
+    
+    func tapTickets(sender: UIBarButtonItem) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "http://www.eventbrite.com/e/iberdrola-usa-tall-ships-portland-2015-tickets-tickets-16342218014?ref=ebtn")!)
     }
     
     func loadShips() {

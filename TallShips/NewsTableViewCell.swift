@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Hasan Adil. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import Parse
 

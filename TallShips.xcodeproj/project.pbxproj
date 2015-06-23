@@ -35,6 +35,12 @@
 		9F1BCBF51B2E325400E5103C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1BCBF41B2E325400E5103C /* SystemConfiguration.framework */; };
 		9F1BCBF71B2E325A00E5103C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1BCBF61B2E325A00E5103C /* libz.dylib */; };
 		9F1BCBF91B2E326100E5103C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1BCBF81B2E326100E5103C /* libsqlite3.dylib */; };
+		9F262D951B3989C700E82E05 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F262D931B3989C700E82E05 /* ScheduleTableViewCell.swift */; };
+		9F262D961B3989C700E82E05 /* ScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F262D941B3989C700E82E05 /* ScheduleTableViewCell.xib */; };
+		9F262D971B398D0A00E82E05 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAECF241B378AB100875E7F /* NewsTableViewCell.swift */; };
+		9F262D981B398D0A00E82E05 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F262D931B3989C700E82E05 /* ScheduleTableViewCell.swift */; };
+		9F262D9B1B398FB200E82E05 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F262D991B398FB200E82E05 /* TextViewController.swift */; };
+		9F262D9C1B398FB200E82E05 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F262D991B398FB200E82E05 /* TextViewController.swift */; };
 		9FAECF231B378A8F00875E7F /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FAECF221B378A8F00875E7F /* NewsTableViewCell.xib */; };
 		9FAECF251B378AB100875E7F /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAECF241B378AB100875E7F /* NewsTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -77,6 +83,9 @@
 		9F1BCBF41B2E325400E5103C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9F1BCBF61B2E325A00E5103C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		9F1BCBF81B2E326100E5103C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		9F262D931B3989C700E82E05 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleTableViewCell.swift; path = TallShips/ScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		9F262D941B3989C700E82E05 /* ScheduleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleTableViewCell.xib; path = TallShips/ScheduleTableViewCell.xib; sourceTree = "<group>"; };
+		9F262D991B398FB200E82E05 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		9FAECF221B378A8F00875E7F /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsTableViewCell.xib; path = TallShips/NewsTableViewCell.xib; sourceTree = "<group>"; };
 		9FAECF241B378AB100875E7F /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewCell.swift; path = TallShips/NewsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,10 +150,11 @@
 		9F1BCBA81B2DE86D00E5103C /* TallShips */ = {
 			isa = PBXGroup;
 			children = (
-				9F1BCBCF1B2DEAE500E5103C /* ScheduleViewController.swift */,
 				9F1BCBD51B2E14B000E5103C /* ShipsViewController.swift */,
 				9F1BCBD81B2E17CC00E5103C /* ShipViewController.swift */,
+				9F1BCBCF1B2DEAE500E5103C /* ScheduleViewController.swift */,
 				9F0CFFF81B311E0C00C91A7A /* NewsViewController.swift */,
+				9F262D991B398FB200E82E05 /* TextViewController.swift */,
 			);
 			path = TallShips;
 			sourceTree = "<group>";
@@ -178,10 +188,9 @@
 		9F1BCBCD1B2DE9AB00E5103C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9F1BCBB11B2DE86D00E5103C /* Main.storyboard */,
-				9F1BCBB61B2DE86D00E5103C /* LaunchScreen.xib */,
-				9FAECF221B378A8F00875E7F /* NewsTableViewCell.xib */,
+				9F262D9F1B3990AB00E82E05 /* Nibs */,
 				9FAECF241B378AB100875E7F /* NewsTableViewCell.swift */,
+				9F262D931B3989C700E82E05 /* ScheduleTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -229,6 +238,17 @@
 				9F1BCBDF1B2E320E00E5103C /* Parse.framework */,
 			);
 			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		9F262D9F1B3990AB00E82E05 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				9F1BCBB11B2DE86D00E5103C /* Main.storyboard */,
+				9F1BCBB61B2DE86D00E5103C /* LaunchScreen.xib */,
+				9FAECF221B378A8F00875E7F /* NewsTableViewCell.xib */,
+				9F262D941B3989C700E82E05 /* ScheduleTableViewCell.xib */,
+			);
+			name = Nibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +336,7 @@
 				9F1BCBB81B2DE86D00E5103C /* LaunchScreen.xib in Resources */,
 				9FAECF231B378A8F00875E7F /* NewsTableViewCell.xib in Resources */,
 				9F1BCBB51B2DE86D00E5103C /* Images.xcassets in Resources */,
+				9F262D961B3989C700E82E05 /* ScheduleTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,11 +355,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F1BCBD61B2E14B000E5103C /* ShipsViewController.swift in Sources */,
+				9F262D951B3989C700E82E05 /* ScheduleTableViewCell.swift in Sources */,
 				9F1BCBAC1B2DE86D00E5103C /* AppDelegate.swift in Sources */,
 				9FAECF251B378AB100875E7F /* NewsTableViewCell.swift in Sources */,
 				9F1BCBDA1B2E17CC00E5103C /* ShipViewController.swift in Sources */,
 				9F0CFFF91B311E0C00C91A7A /* NewsViewController.swift in Sources */,
 				9F1BCBD01B2DEAE500E5103C /* ScheduleViewController.swift in Sources */,
+				9F262D9B1B398FB200E82E05 /* TextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,9 +369,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F262D971B398D0A00E82E05 /* NewsTableViewCell.swift in Sources */,
+				9F262D981B398D0A00E82E05 /* ScheduleTableViewCell.swift in Sources */,
 				9F1BCBC41B2DE86D00E5103C /* TallShipsTests.swift in Sources */,
 				9F1BCBD71B2E14B000E5103C /* ShipsViewController.swift in Sources */,
 				9F1BCBDB1B2E17CC00E5103C /* ShipViewController.swift in Sources */,
+				9F262D9C1B398FB200E82E05 /* TextViewController.swift in Sources */,
 				9F1BCBD11B2DEAE500E5103C /* ScheduleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

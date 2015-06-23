@@ -113,6 +113,60 @@
             </objects>
             <point key="canvasLocation" x="2504" y="-682"/>
         </scene>
+        <!--Text View Controller-->
+        <scene sceneID="NJv-vT-Cfv">
+            <objects>
+                <viewController storyboardIdentifier="TextViewController" automaticallyAdjustsScrollViewInsets="NO" id="iQy-yJ-6wQ" customClass="TextViewController" customModule="TallShips" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a4W-IJ-FqF"/>
+                        <viewControllerLayoutGuide type="bottom" id="nXq-lx-rjn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mxX-x7-aiL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6X1-RM-wtC">
+                                <rect key="frame" x="15" y="64" width="570" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6X1-RM-wtC" firstAttribute="top" secondItem="a4W-IJ-FqF" secondAttribute="bottom" id="3si-Kc-Hzy"/>
+                            <constraint firstItem="6X1-RM-wtC" firstAttribute="top" secondItem="a4W-IJ-FqF" secondAttribute="bottom" id="9IV-CE-rde"/>
+                            <constraint firstItem="6X1-RM-wtC" firstAttribute="top" secondItem="mxX-x7-aiL" secondAttribute="top" id="KVa-vH-ErG"/>
+                            <constraint firstAttribute="trailing" secondItem="6X1-RM-wtC" secondAttribute="trailing" constant="15" id="bpR-rb-epp"/>
+                            <constraint firstAttribute="height" secondItem="6X1-RM-wtC" secondAttribute="height" id="caM-9u-eoD"/>
+                            <constraint firstItem="6X1-RM-wtC" firstAttribute="top" secondItem="a4W-IJ-FqF" secondAttribute="bottom" id="d5R-GT-Fi6"/>
+                            <constraint firstItem="6X1-RM-wtC" firstAttribute="top" secondItem="a4W-IJ-FqF" secondAttribute="bottom" id="rnC-LT-oOt"/>
+                            <constraint firstItem="6X1-RM-wtC" firstAttribute="leading" secondItem="mxX-x7-aiL" secondAttribute="leading" constant="15" id="ulX-Nk-081"/>
+                            <constraint firstItem="nXq-lx-rjn" firstAttribute="top" secondItem="6X1-RM-wtC" secondAttribute="bottom" id="yRW-80-gLV"/>
+                            <constraint firstItem="6X1-RM-wtC" firstAttribute="top" secondItem="a4W-IJ-FqF" secondAttribute="bottom" id="zLD-Ym-ODq"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9IV-CE-rde"/>
+                                <exclude reference="KVa-vH-ErG"/>
+                                <exclude reference="caM-9u-eoD"/>
+                                <exclude reference="d5R-GT-Fi6"/>
+                                <exclude reference="rnC-LT-oOt"/>
+                                <exclude reference="zLD-Ym-ODq"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="textView" destination="6X1-RM-wtC" id="LMx-i0-Hci"/>
+                        <outlet property="view" destination="mxX-x7-aiL" id="40O-7z-VU5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X9a-m3-BYU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2504" y="25"/>
+        </scene>
         <!--Maps-->
         <scene sceneID="SDN-sg-owm">
             <objects>
@@ -158,16 +212,30 @@
         <!--Schedule-->
         <scene sceneID="yRN-oW-I2O">
             <objects>
-                <tableViewController id="N9Y-tN-5Fe" sceneMemberID="viewController">
+                <tableViewController id="N9Y-tN-5Fe" customClass="ScheduleViewController" customModule="TallShips" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="HG4-4h-jva">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qka-Vd-9nK">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="Boo-mp-oA7" detailTextLabel="ebt-x1-Nrz" style="IBUITableViewCellStyleSubtitle" id="qka-Vd-9nK">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qka-Vd-9nK" id="V9Y-Dz-Fl0">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Boo-mp-oA7">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ebt-x1-Nrz">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -177,6 +245,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Schedule" id="x8X-7E-Bui"/>
+                    <connections>
+                        <outlet property="view" destination="HG4-4h-jva" id="TdL-xo-SgQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FKh-J1-zuh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

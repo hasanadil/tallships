@@ -12,10 +12,12 @@ import Parse
 class NewsViewController: UITableViewController {
     
     let city = "pwm"
-    var allNews = [] as [PFObject]
+    var items = [] as [PFObject]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tickets", style: UIBarButtonItemStyle.Plain, target: self, action: "tapTickets:")
+        
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         self.tableView.estimatedRowHeight = 44
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -26,10 +28,14 @@ class NewsViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated);
-        self.loadNews()
+        self.fetch()
     }
     
-    func loadNews() {
+    func tapTickets(sender: UIBarButtonItem) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "http://www.eventbrite.com/e/iberdrola-usa-tall-ships-portland-2015-tickets-tickets-16342218014?ref=ebtn")!)
+    }
+    
+    func fetch() {
         var query = PFQuery(className:"News")
         query.whereKey("city", equalTo:self.city)
         query.orderByDescending("createdAt")
@@ -41,7 +47,7 @@ class NewsViewController: UITableViewController {
                         println(object.objectId)
                     }
                     
-                    self.allNews = objects
+                    self.items = objects
                     self.tableView.reloadData()
                 }
             } else {
@@ -54,12 +60,12 @@ class NewsViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.allNews.count
+        return self.items.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("NewsTableViewCell", forIndexPath: indexPath) as! NewsTableViewCell
-        let news = allNews[indexPath.row] as PFObject
+        let news = self.items[indexPath.row] as PFObject
         cell.setNews(news)
         return cell
     }

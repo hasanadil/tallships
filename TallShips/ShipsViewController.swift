@@ -9,17 +9,28 @@
 import UIKit
 import Parse
 
-class ShipsViewController: UIPageViewController, UIPageViewControllerDataSource {
+class ShipsViewController: UIViewController, UIPageViewControllerDataSource {
     
     let city = "pwm"
-    var ships = [] as [PFObject]
+    var items = [] as [PFObject]
+    
+    @IBOutlet weak var shipsScrollView: UIScrollView?
+    let pages = UIPageViewController() as UIPageViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tickets", style: UIBarButtonItemStyle.Plain, target: self, action: "tapTickets:")
         
         self.view.backgroundColor = UIColor.whiteColor()
-        self.dataSource = self
+        
+        self.pages.dataSource = self
+        let pagesView = self.pages.view
+        pagesView?.setTranslatesAutoresizingMaskIntoConstraints(false)
+        
+        self.view.addSubview(pagesView!)
+        let views = Dictionary(dictionaryLiteral: ("pagesView", pagesView), ("shipsScrollView", self.shipsScrollView))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[pagesView]|", options: nil, metrics: nil, views: views))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[shipsScrollView][pagesView]|", options: nil, metrics: nil, views: views))
+        
         self.loadShips()
     }
     
@@ -39,12 +50,14 @@ class ShipsViewController: UIPageViewController, UIPageViewControllerDataSource 
                         println(object.objectId)
                     }
                     
-                    self.ships = objects
+                    self.items = objects
                     
                     let shipController = self.storyboard?.instantiateViewControllerWithIdentifier("ShipViewController") as! ShipViewController
                     shipController.index = 0
                     shipController.ship = objects[0]
-                    self.setViewControllers([shipController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: { (result) -> Void in
+                    self.pages.setViewControllers([shipController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: { (result) -> Void in
+                        
+                        self.view.bringSubviewToFront(self.shipsScrollView!)
                     })
                 }
             } else {
@@ -66,7 +79,7 @@ class ShipsViewController: UIPageViewController, UIPageViewControllerDataSource 
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         let shipController = viewController as! ShipViewController
-        if shipController.index < self.ships.count-1 {
+        if shipController.index < self.items.count-1 {
             return controllerAtIndex(shipController.index+1)
         }
         return nil
@@ -75,12 +88,12 @@ class ShipsViewController: UIPageViewController, UIPageViewControllerDataSource 
     func controllerAtIndex(index: Int) -> ShipViewController {
         let shipController = self.storyboard?.instantiateViewControllerWithIdentifier("ShipViewController") as! ShipViewController
         shipController.index = index
-        shipController.ship = self.ships[index]
+        shipController.ship = self.items[index]
         return shipController
     }
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return self.ships.count
+        return self.items.count
     }
 
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {

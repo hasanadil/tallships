@@ -11,9 +11,12 @@ import Parse
 
 class ShipViewController: UIViewController {
     
-    @IBOutlet weak var titleLabel: UILabel?
-    @IBOutlet weak var aboutText: UITextView?
-    @IBOutlet weak var aboutTextTop: NSLayoutConstraint?
+    @IBOutlet weak var nameLabel: UILabel?
+    @IBOutlet weak var locationLabel: UILabel?
+    @IBOutlet weak var aboutText: UILabel?
+    
+    @IBOutlet weak var flagImageView: UIImageView?
+    @IBOutlet weak var shipImageView: UIImageView?
     
     var height = 0 as CGFloat
     
@@ -23,6 +26,19 @@ class ShipViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.nameLabel?.text = self.ship["name"] as? String
+        self.locationLabel?.text = self.ship["subtitle"] as? String
+        self.aboutText?.text = self.ship["about"] as? String
+        
+        let imageFile = self.ship["image"] as! PFFile
+        imageFile.getDataInBackgroundWithBlock { (data, error) -> Void in
+            if let imageData = data {
+                let image = UIImage(data: imageData)
+                self.shipImageView?.image = image
+            }
+        }
+        
+        /*
         let name = NSAttributedString(
             string: self.ship["name"] as! String,
             attributes: [NSFontAttributeName : UIFont.systemFontOfSize(42)]
@@ -55,8 +71,10 @@ class ShipViewController: UIViewController {
         about.appendAttributedString(NSAttributedString(string: "\n\n"))
         about.appendAttributedString(aboutSubtitle)
         self.aboutText?.attributedText = about
+        */
     }
     
+    /*
     override func viewDidLayoutSubviews() {
         if self.height == 0 {
             self.height = self.view.bounds.size.height
@@ -109,5 +127,6 @@ class ShipViewController: UIViewController {
             self.view.layoutIfNeeded()
         })
     }
+    */
 }
 

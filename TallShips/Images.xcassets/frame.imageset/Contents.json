@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "usa.png"
+      "filename" : "frame.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "usa@2x.png"
+      "filename" : "frame@2x.png"
     },
     {
       "idiom" : "universal",

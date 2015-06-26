@@ -14,22 +14,34 @@ class ShipsViewController: UIViewController, UIPageViewControllerDataSource {
     let city = "pwm"
     var items = [] as [PFObject]
     
-    @IBOutlet weak var shipsScrollView: UIScrollView?
-    let pages = UIPageViewController() as UIPageViewController
+    let typePages = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil)
+    
+    let profilePages = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.whiteColor()
         
-        self.pages.dataSource = self
-        let pagesView = self.pages.view
-        pagesView?.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.typePages.dataSource = self
+        let typePagesView = self.typePages.view
+        typePagesView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.view.addSubview(typePagesView!)
         
-        self.view.addSubview(pagesView!)
-        let views = Dictionary(dictionaryLiteral: ("pagesView", pagesView), ("shipsScrollView", self.shipsScrollView))
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[pagesView]|", options: nil, metrics: nil, views: views))
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[shipsScrollView][pagesView]|", options: nil, metrics: nil, views: views))
+        self.profilePages.dataSource = self
+        let profilePagesView = self.profilePages.view
+        profilePagesView?.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.view.addSubview(profilePagesView!)
+        
+        self.view.sendSubviewToBack(typePagesView)
+        
+        let views = Dictionary(dictionaryLiteral:
+            ("profilePagesView", profilePagesView),
+            ("typePagesView", typePagesView)
+        )
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[profilePagesView]|", options: nil, metrics: nil, views: views))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[typePagesView]|", options: nil, metrics: nil, views: views))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-[typePagesView(125)][profilePagesView]|", options: nil, metrics: nil, views: views))
         
         self.loadShips()
     }
@@ -55,9 +67,15 @@ class ShipsViewController: UIViewController, UIPageViewControllerDataSource {
                     let shipController = self.storyboard?.instantiateViewControllerWithIdentifier("ShipViewController") as! ShipViewController
                     shipController.index = 0
                     shipController.ship = objects[0]
-                    self.pages.setViewControllers([shipController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: { (result) -> Void in
+                    self.profilePages.setViewControllers([shipController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: { (result) -> Void in
                         
-                        self.view.bringSubviewToFront(self.shipsScrollView!)
+                    })
+                    
+                    let typeController = self.storyboard?.instantiateViewControllerWithIdentifier("TypeViewController") as! TypeViewController
+                    typeController.index = 0
+                    typeController.ship = objects[0]
+                    self.typePages.setViewControllers([typeController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: { (result) -> Void in
+                        
                     })
                 }
             } else {
@@ -70,26 +88,51 @@ class ShipsViewController: UIViewController, UIPageViewControllerDataSource {
     // MARK: UIPageViewControllerDataSource
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        let shipController = viewController as! ShipViewController
-        if shipController.index == 0 {
-            return nil
+        if (pageViewController == self.profilePages) {
+            let controller = viewController as! ShipViewController
+            if controller.index == 0 {
+                return nil
+            }
+            return shipControllerAtIndex(controller.index-1)
         }
-        return controllerAtIndex(shipController.index-1)
+        else {
+            let controller = viewController as! TypeViewController
+            if controller.index == 0 {
+                return nil
+            }
+            return shipControllerAtIndex(controller.index-1)
+        }
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        let shipController = viewController as! ShipViewController
-        if shipController.index < self.items.count-1 {
-            return controllerAtIndex(shipController.index+1)
+        
+        if (pageViewController == self.profilePages) {
+            let controller = viewController as! ShipViewController
+            if controller.index < self.items.count-1 {
+                return shipControllerAtIndex(controller.index+1)
+            }
+        }
+        else if (pageViewController == self.typePages) {
+            let controller = viewController as! TypeViewController
+            if controller.index < self.items.count-1 {
+                return typeControllerAtIndex(controller.index+1)
+            }
         }
         return nil
     }
     
-    func controllerAtIndex(index: Int) -> ShipViewController {
-        let shipController = self.storyboard?.instantiateViewControllerWithIdentifier("ShipViewController") as! ShipViewController
-        shipController.index = index
-        shipController.ship = self.items[index]
-        return shipController
+    func typeControllerAtIndex(index: Int) -> TypeViewController {
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("TypeViewController") as! TypeViewController
+        controller.index = index
+        controller.ship = self.items[index]
+        return controller
+    }
+    
+    func shipControllerAtIndex(index: Int) -> ShipViewController {
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("ShipViewController") as! ShipViewController
+        controller.index = index
+        controller.ship = self.items[index]
+        return controller
     }
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {

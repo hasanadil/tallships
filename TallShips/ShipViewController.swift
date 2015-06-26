@@ -30,11 +30,13 @@ class ShipViewController: UIViewController {
         self.locationLabel?.text = self.ship["subtitle"] as? String
         self.aboutText?.text = self.ship["about"] as? String
         
-        let imageFile = self.ship["image"] as! PFFile
-        imageFile.getDataInBackgroundWithBlock { (data, error) -> Void in
-            if let imageData = data {
-                let image = UIImage(data: imageData)
-                self.shipImageView?.image = image
+        let imageFile = self.ship["image"] as? PFFile
+        if let imageFile = imageFile {
+            imageFile.getDataInBackgroundWithBlock { (data, error) -> Void in
+                if let imageData = data {
+                    let image = UIImage(data: imageData)
+                    self.shipImageView?.image = image
+                }
             }
         }
         

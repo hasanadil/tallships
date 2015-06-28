@@ -14,8 +14,6 @@ class ShipsViewController: UIViewController, UIPageViewControllerDataSource {
     let city = "pwm"
     var items = [] as [PFObject]
     
-    let typePages = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil)
-    
     let profilePages = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil)
     
     override func viewDidLoad() {
@@ -23,25 +21,16 @@ class ShipsViewController: UIViewController, UIPageViewControllerDataSource {
         
         self.view.backgroundColor = UIColor.whiteColor()
         
-        self.typePages.dataSource = self
-        let typePagesView = self.typePages.view
-        typePagesView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        self.view.addSubview(typePagesView!)
-        
         self.profilePages.dataSource = self
         let profilePagesView = self.profilePages.view
         profilePagesView?.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.view.addSubview(profilePagesView!)
         
-        self.view.sendSubviewToBack(typePagesView)
-        
         let views = Dictionary(dictionaryLiteral:
-            ("profilePagesView", profilePagesView),
-            ("typePagesView", typePagesView)
+            ("profilePagesView", profilePagesView)
         )
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[profilePagesView]|", options: nil, metrics: nil, views: views))
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[typePagesView]|", options: nil, metrics: nil, views: views))
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-[typePagesView(125)][profilePagesView]|", options: nil, metrics: nil, views: views))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[profilePagesView]|", options: nil, metrics: nil, views: views))
         
         self.loadShips()
     }
@@ -64,17 +53,10 @@ class ShipsViewController: UIViewController, UIPageViewControllerDataSource {
                     
                     self.items = objects
                     
-                    let shipController = self.storyboard?.instantiateViewControllerWithIdentifier("ShipViewController") as! ShipViewController
+                    let shipController = self.storyboard?.instantiateViewControllerWithIdentifier("ShipProfileViewController") as! ShipProfileViewController
                     shipController.index = 0
                     shipController.ship = objects[0]
                     self.profilePages.setViewControllers([shipController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: { (result) -> Void in
-                        
-                    })
-                    
-                    let typeController = self.storyboard?.instantiateViewControllerWithIdentifier("TypeViewController") as! TypeViewController
-                    typeController.index = 0
-                    typeController.ship = objects[0]
-                    self.typePages.setViewControllers([typeController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: { (result) -> Void in
                         
                     })
                 }
@@ -88,48 +70,36 @@ class ShipsViewController: UIViewController, UIPageViewControllerDataSource {
     // MARK: UIPageViewControllerDataSource
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+        
+        let shipPage = viewController as! ShipPageViewController
+        let newIndex = shipPage.index - 1
+        
         if (pageViewController == self.profilePages) {
-            let controller = viewController as! ShipViewController
-            if controller.index == 0 {
+            if shipPage.index == 0 {
                 return nil
             }
-            return shipControllerAtIndex(controller.index-1)
+            
+            return shipControllerAtIndex(newIndex)
         }
-        else {
-            let controller = viewController as! TypeViewController
-            if controller.index == 0 {
-                return nil
-            }
-            return shipControllerAtIndex(controller.index-1)
-        }
+        return nil
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         
+        let shipPage = viewController as! ShipPageViewController
+        let newIndex = shipPage.index + 1
+        
         if (pageViewController == self.profilePages) {
-            let controller = viewController as! ShipViewController
-            if controller.index < self.items.count-1 {
-                return shipControllerAtIndex(controller.index+1)
-            }
-        }
-        else if (pageViewController == self.typePages) {
-            let controller = viewController as! TypeViewController
-            if controller.index < self.items.count-1 {
-                return typeControllerAtIndex(controller.index+1)
+            if shipPage.index < self.items.count-1 {
+                
+                return shipControllerAtIndex(newIndex)
             }
         }
         return nil
     }
     
-    func typeControllerAtIndex(index: Int) -> TypeViewController {
-        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("TypeViewController") as! TypeViewController
-        controller.index = index
-        controller.ship = self.items[index]
-        return controller
-    }
-    
-    func shipControllerAtIndex(index: Int) -> ShipViewController {
-        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("ShipViewController") as! ShipViewController
+    func shipControllerAtIndex(index: Int) -> ShipProfileViewController {
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("ShipProfileViewController") as! ShipProfileViewController
         controller.index = index
         controller.ship = self.items[index]
         return controller

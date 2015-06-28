@@ -9,12 +9,9 @@
 import UIKit
 import Parse
 
-class TypeViewController: UIViewController {
+class ShipTypeViewController : ShipPageViewController {
     
     @IBOutlet weak var typeLabel: UILabel?
-    
-    var index = 0
-    var ship = PFObject(className: "Ship") as PFObject
     
     override func viewDidLoad() {
         super.viewDidLoad()

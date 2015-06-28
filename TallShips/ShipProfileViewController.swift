@@ -9,19 +9,17 @@
 import UIKit
 import Parse
 
-class ShipViewController: UIViewController {
+class ShipProfileViewController: ShipPageViewController {
     
     @IBOutlet weak var nameLabel: UILabel?
     @IBOutlet weak var locationLabel: UILabel?
     @IBOutlet weak var aboutText: UILabel?
+    @IBOutlet weak var typeLabel: UILabel?
     
     @IBOutlet weak var flagImageView: UIImageView?
     @IBOutlet weak var shipImageView: UIImageView?
     
     var height = 0 as CGFloat
-    
-    var index = 0
-    var ship = PFObject(className: "Ship") as PFObject
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +27,7 @@ class ShipViewController: UIViewController {
         self.nameLabel?.text = self.ship["name"] as? String
         self.locationLabel?.text = self.ship["subtitle"] as? String
         self.aboutText?.text = self.ship["about"] as? String
+        self.typeLabel?.text = self.ship["shipType"] as? String
         
         let imageFile = self.ship["image"] as? PFFile
         if let imageFile = imageFile {

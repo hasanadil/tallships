@@ -18,8 +18,8 @@
 		9F1BCBD31B2DEDD900E5103C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1BCBD21B2DEDD900E5103C /* MapKit.framework */; };
 		9F1BCBD61B2E14B000E5103C /* ShipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1BCBD51B2E14B000E5103C /* ShipsViewController.swift */; };
 		9F1BCBD71B2E14B000E5103C /* ShipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1BCBD51B2E14B000E5103C /* ShipsViewController.swift */; };
-		9F1BCBDA1B2E17CC00E5103C /* ShipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1BCBD81B2E17CC00E5103C /* ShipViewController.swift */; };
-		9F1BCBDB1B2E17CC00E5103C /* ShipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1BCBD81B2E17CC00E5103C /* ShipViewController.swift */; };
+		9F1BCBDA1B2E17CC00E5103C /* ShipProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1BCBD81B2E17CC00E5103C /* ShipProfileViewController.swift */; };
+		9F1BCBDB1B2E17CC00E5103C /* ShipProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1BCBD81B2E17CC00E5103C /* ShipProfileViewController.swift */; };
 		9F1BCBE01B2E320E00E5103C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1BCBDE1B2E320E00E5103C /* Bolts.framework */; };
 		9F1BCBE11B2E320E00E5103C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1BCBDE1B2E320E00E5103C /* Bolts.framework */; };
 		9F1BCBE21B2E320E00E5103C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1BCBDF1B2E320E00E5103C /* Parse.framework */; };
@@ -41,11 +41,13 @@
 		9F262D981B398D0A00E82E05 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F262D931B3989C700E82E05 /* ScheduleTableViewCell.swift */; };
 		9F262D9B1B398FB200E82E05 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F262D991B398FB200E82E05 /* TextViewController.swift */; };
 		9F262D9C1B398FB200E82E05 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F262D991B398FB200E82E05 /* TextViewController.swift */; };
-		9F835DCD1B3DD6E9000038A4 /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F835DCC1B3DD6E9000038A4 /* TypeViewController.swift */; };
+		9F835DCD1B3DD6E9000038A4 /* ShipTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F835DCC1B3DD6E9000038A4 /* ShipTypeViewController.swift */; };
 		9F835DCE1B3DD763000038A4 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0CFFF81B311E0C00C91A7A /* NewsViewController.swift */; };
-		9F835DCF1B3DD763000038A4 /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F835DCC1B3DD6E9000038A4 /* TypeViewController.swift */; };
+		9F835DCF1B3DD763000038A4 /* ShipTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F835DCC1B3DD6E9000038A4 /* ShipTypeViewController.swift */; };
 		9FAECF231B378A8F00875E7F /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FAECF221B378A8F00875E7F /* NewsTableViewCell.xib */; };
 		9FAECF251B378AB100875E7F /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAECF241B378AB100875E7F /* NewsTableViewCell.swift */; };
+		9FD9276B1B402C940024D843 /* ShipPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD9276A1B402C940024D843 /* ShipPageViewController.swift */; };
+		9FD9276C1B402CBC0024D843 /* ShipPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD9276A1B402C940024D843 /* ShipPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +74,7 @@
 		9F1BCBCF1B2DEAE500E5103C /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		9F1BCBD21B2DEDD900E5103C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9F1BCBD51B2E14B000E5103C /* ShipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipsViewController.swift; sourceTree = "<group>"; };
-		9F1BCBD81B2E17CC00E5103C /* ShipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipViewController.swift; sourceTree = "<group>"; };
+		9F1BCBD81B2E17CC00E5103C /* ShipProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipProfileViewController.swift; sourceTree = "<group>"; };
 		9F1BCBDE1B2E320E00E5103C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Libs/Parse1.7.4/Bolts.framework; sourceTree = "<group>"; };
 		9F1BCBDF1B2E320E00E5103C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Libs/Parse1.7.4/Parse.framework; sourceTree = "<group>"; };
 		9F1BCBE41B2E321F00E5103C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -89,9 +91,10 @@
 		9F262D931B3989C700E82E05 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleTableViewCell.swift; path = TallShips/ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		9F262D941B3989C700E82E05 /* ScheduleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleTableViewCell.xib; path = TallShips/ScheduleTableViewCell.xib; sourceTree = "<group>"; };
 		9F262D991B398FB200E82E05 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
-		9F835DCC1B3DD6E9000038A4 /* TypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeViewController.swift; sourceTree = "<group>"; };
+		9F835DCC1B3DD6E9000038A4 /* ShipTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipTypeViewController.swift; sourceTree = "<group>"; };
 		9FAECF221B378A8F00875E7F /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsTableViewCell.xib; path = TallShips/NewsTableViewCell.xib; sourceTree = "<group>"; };
 		9FAECF241B378AB100875E7F /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewCell.swift; path = TallShips/NewsTableViewCell.swift; sourceTree = "<group>"; };
+		9FD9276A1B402C940024D843 /* ShipPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +136,7 @@
 			children = (
 				9F1BCBB41B2DE86D00E5103C /* Images.xcassets */,
 				9F1BCBCD1B2DE9AB00E5103C /* Views */,
-				9F1BCBA81B2DE86D00E5103C /* TallShips */,
+				9F1BCBA81B2DE86D00E5103C /* Controllers */,
 				9F1BCBCE1B2DE9C300E5103C /* Delegate */,
 				9F1BCBA91B2DE86D00E5103C /* Supporting Files */,
 				9F1BCBD41B2DEDF700E5103C /* Libs */,
@@ -151,16 +154,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9F1BCBA81B2DE86D00E5103C /* TallShips */ = {
+		9F1BCBA81B2DE86D00E5103C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9F1BCBD51B2E14B000E5103C /* ShipsViewController.swift */,
-				9F1BCBD81B2E17CC00E5103C /* ShipViewController.swift */,
-				9F1BCBCF1B2DEAE500E5103C /* ScheduleViewController.swift */,
 				9F0CFFF81B311E0C00C91A7A /* NewsViewController.swift */,
+				9F1BCBCF1B2DEAE500E5103C /* ScheduleViewController.swift */,
+				9FD9276A1B402C940024D843 /* ShipPageViewController.swift */,
+				9F1BCBD81B2E17CC00E5103C /* ShipProfileViewController.swift */,
+				9F1BCBD51B2E14B000E5103C /* ShipsViewController.swift */,
+				9F835DCC1B3DD6E9000038A4 /* ShipTypeViewController.swift */,
 				9F262D991B398FB200E82E05 /* TextViewController.swift */,
-				9F835DCC1B3DD6E9000038A4 /* TypeViewController.swift */,
 			);
+			name = Controllers;
 			path = TallShips;
 			sourceTree = "<group>";
 		};
@@ -360,11 +365,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F1BCBD61B2E14B000E5103C /* ShipsViewController.swift in Sources */,
+				9FD9276B1B402C940024D843 /* ShipPageViewController.swift in Sources */,
 				9F262D951B3989C700E82E05 /* ScheduleTableViewCell.swift in Sources */,
 				9F1BCBAC1B2DE86D00E5103C /* AppDelegate.swift in Sources */,
-				9F835DCD1B3DD6E9000038A4 /* TypeViewController.swift in Sources */,
+				9F835DCD1B3DD6E9000038A4 /* ShipTypeViewController.swift in Sources */,
 				9FAECF251B378AB100875E7F /* NewsTableViewCell.swift in Sources */,
-				9F1BCBDA1B2E17CC00E5103C /* ShipViewController.swift in Sources */,
+				9F1BCBDA1B2E17CC00E5103C /* ShipProfileViewController.swift in Sources */,
 				9F0CFFF91B311E0C00C91A7A /* NewsViewController.swift in Sources */,
 				9F1BCBD01B2DEAE500E5103C /* ScheduleViewController.swift in Sources */,
 				9F262D9B1B398FB200E82E05 /* TextViewController.swift in Sources */,
@@ -375,13 +381,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FD9276C1B402CBC0024D843 /* ShipPageViewController.swift in Sources */,
 				9F835DCE1B3DD763000038A4 /* NewsViewController.swift in Sources */,
-				9F835DCF1B3DD763000038A4 /* TypeViewController.swift in Sources */,
+				9F835DCF1B3DD763000038A4 /* ShipTypeViewController.swift in Sources */,
 				9F262D971B398D0A00E82E05 /* NewsTableViewCell.swift in Sources */,
 				9F262D981B398D0A00E82E05 /* ScheduleTableViewCell.swift in Sources */,
 				9F1BCBC41B2DE86D00E5103C /* TallShipsTests.swift in Sources */,
 				9F1BCBD71B2E14B000E5103C /* ShipsViewController.swift in Sources */,
-				9F1BCBDB1B2E17CC00E5103C /* ShipViewController.swift in Sources */,
+				9F1BCBDB1B2E17CC00E5103C /* ShipProfileViewController.swift in Sources */,
 				9F262D9C1B398FB200E82E05 /* TextViewController.swift in Sources */,
 				9F1BCBD11B2DEAE500E5103C /* ScheduleViewController.swift in Sources */,
 			);

@@ -41,11 +41,11 @@
 		9F262D981B398D0A00E82E05 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F262D931B3989C700E82E05 /* ScheduleTableViewCell.swift */; };
 		9F262D9B1B398FB200E82E05 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F262D991B398FB200E82E05 /* TextViewController.swift */; };
 		9F262D9C1B398FB200E82E05 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F262D991B398FB200E82E05 /* TextViewController.swift */; };
-		9F835DCD1B3DD6E9000038A4 /* ShipTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F835DCC1B3DD6E9000038A4 /* ShipTypeViewController.swift */; };
 		9F835DCE1B3DD763000038A4 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0CFFF81B311E0C00C91A7A /* NewsViewController.swift */; };
-		9F835DCF1B3DD763000038A4 /* ShipTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F835DCC1B3DD6E9000038A4 /* ShipTypeViewController.swift */; };
 		9FAECF231B378A8F00875E7F /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FAECF221B378A8F00875E7F /* NewsTableViewCell.xib */; };
 		9FAECF251B378AB100875E7F /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAECF241B378AB100875E7F /* NewsTableViewCell.swift */; };
+		9FD825B61B4179EF00873706 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD825B41B4179EF00873706 /* Fabric.framework */; };
+		9FD825B71B4179EF00873706 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD825B51B4179EF00873706 /* Crashlytics.framework */; };
 		9FD9276B1B402C940024D843 /* ShipPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD9276A1B402C940024D843 /* ShipPageViewController.swift */; };
 		9FD9276C1B402CBC0024D843 /* ShipPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD9276A1B402C940024D843 /* ShipPageViewController.swift */; };
 /* End PBXBuildFile section */
@@ -91,9 +91,10 @@
 		9F262D931B3989C700E82E05 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleTableViewCell.swift; path = TallShips/ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		9F262D941B3989C700E82E05 /* ScheduleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleTableViewCell.xib; path = TallShips/ScheduleTableViewCell.xib; sourceTree = "<group>"; };
 		9F262D991B398FB200E82E05 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
-		9F835DCC1B3DD6E9000038A4 /* ShipTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipTypeViewController.swift; sourceTree = "<group>"; };
 		9FAECF221B378A8F00875E7F /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsTableViewCell.xib; path = TallShips/NewsTableViewCell.xib; sourceTree = "<group>"; };
 		9FAECF241B378AB100875E7F /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewCell.swift; path = TallShips/NewsTableViewCell.swift; sourceTree = "<group>"; };
+		9FD825B41B4179EF00873706 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		9FD825B51B4179EF00873706 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		9FD9276A1B402C940024D843 /* ShipPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,7 +113,9 @@
 				9F1BCBEB1B2E323300E5103C /* CoreLocation.framework in Frameworks */,
 				9F1BCBE91B2E322B00E5103C /* CoreGraphics.framework in Frameworks */,
 				9F1BCBE71B2E322600E5103C /* CFNetwork.framework in Frameworks */,
+				9FD825B71B4179EF00873706 /* Crashlytics.framework in Frameworks */,
 				9F1BCBE51B2E321F00E5103C /* AudioToolbox.framework in Frameworks */,
+				9FD825B61B4179EF00873706 /* Fabric.framework in Frameworks */,
 				9F1BCBD31B2DEDD900E5103C /* MapKit.framework in Frameworks */,
 				9F1BCBE21B2E320E00E5103C /* Parse.framework in Frameworks */,
 				9F1BCBE01B2E320E00E5103C /* Bolts.framework in Frameworks */,
@@ -162,7 +165,6 @@
 				9FD9276A1B402C940024D843 /* ShipPageViewController.swift */,
 				9F1BCBD81B2E17CC00E5103C /* ShipProfileViewController.swift */,
 				9F1BCBD51B2E14B000E5103C /* ShipsViewController.swift */,
-				9F835DCC1B3DD6E9000038A4 /* ShipTypeViewController.swift */,
 				9F262D991B398FB200E82E05 /* TextViewController.swift */,
 			);
 			name = Controllers;
@@ -216,6 +218,8 @@
 		9F1BCBD41B2DEDF700E5103C /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				9FD825B41B4179EF00873706 /* Fabric.framework */,
+				9FD825B51B4179EF00873706 /* Crashlytics.framework */,
 				9F1BCBFB1B2E328000E5103C /* ThirdParty */,
 				9F1BCBFA1B2E327900E5103C /* Apple */,
 			);
@@ -271,6 +275,7 @@
 				9F1BCBA21B2DE86C00E5103C /* Sources */,
 				9F1BCBA31B2DE86C00E5103C /* Frameworks */,
 				9F1BCBA41B2DE86C00E5103C /* Resources */,
+				9FD825B31B4179D300873706 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -359,6 +364,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9FD825B31B4179D300873706 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 2b5c35f6292841ec35294cebdd3aeeb5ea966453 a113c5829f9ca23a78d688318ee11037977c9fbc87274dc993eb3e5c16443b4d";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9F1BCBA21B2DE86C00E5103C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -368,7 +389,6 @@
 				9FD9276B1B402C940024D843 /* ShipPageViewController.swift in Sources */,
 				9F262D951B3989C700E82E05 /* ScheduleTableViewCell.swift in Sources */,
 				9F1BCBAC1B2DE86D00E5103C /* AppDelegate.swift in Sources */,
-				9F835DCD1B3DD6E9000038A4 /* ShipTypeViewController.swift in Sources */,
 				9FAECF251B378AB100875E7F /* NewsTableViewCell.swift in Sources */,
 				9F1BCBDA1B2E17CC00E5103C /* ShipProfileViewController.swift in Sources */,
 				9F0CFFF91B311E0C00C91A7A /* NewsViewController.swift in Sources */,
@@ -383,7 +403,6 @@
 			files = (
 				9FD9276C1B402CBC0024D843 /* ShipPageViewController.swift in Sources */,
 				9F835DCE1B3DD763000038A4 /* NewsViewController.swift in Sources */,
-				9F835DCF1B3DD763000038A4 /* ShipTypeViewController.swift in Sources */,
 				9F262D971B398D0A00E82E05 /* NewsTableViewCell.swift in Sources */,
 				9F262D981B398D0A00E82E05 /* ScheduleTableViewCell.swift in Sources */,
 				9F1BCBC41B2DE86D00E5103C /* TallShipsTests.swift in Sources */,
@@ -517,10 +536,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libs/Parse1.7.4",
 					/Users/hasan/Personal/apps/routekit/libs,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TallShips/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f8fb87b4-7653-4378-98b4-b4c7e25bb95f";
 			};
 			name = Debug;
 		};
@@ -532,10 +553,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libs/Parse1.7.4",
 					/Users/hasan/Personal/apps/routekit/libs,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TallShips/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f8fb87b4-7653-4378-98b4-b4c7e25bb95f";
 			};
 			name = Release;
 		};

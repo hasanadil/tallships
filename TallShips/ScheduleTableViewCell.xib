@@ -20,7 +20,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJg-D4-Pun">
-                        <rect key="frame" x="15" y="35" width="730" height="202"/>
+                        <rect key="frame" x="15" y="35" width="730" height="187"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -30,7 +30,7 @@
                     <constraint firstItem="GzD-MF-ozo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="3qa-9S-Eza"/>
                     <constraint firstItem="BJg-D4-Pun" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="D31-xV-KKr"/>
                     <constraint firstAttribute="trailing" secondItem="GzD-MF-ozo" secondAttribute="trailing" constant="10" id="SKk-Ah-lWj"/>
-                    <constraint firstAttribute="bottom" secondItem="BJg-D4-Pun" secondAttribute="bottom" constant="5" id="ad4-xV-Pm4"/>
+                    <constraint firstAttribute="bottom" secondItem="BJg-D4-Pun" secondAttribute="bottom" constant="20" id="ad4-xV-Pm4"/>
                     <constraint firstAttribute="trailing" secondItem="BJg-D4-Pun" secondAttribute="trailing" constant="10" id="jfl-6h-1jT"/>
                     <constraint firstItem="GzD-MF-ozo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="vUj-Ya-ZR5"/>
                     <constraint firstItem="BJg-D4-Pun" firstAttribute="top" secondItem="GzD-MF-ozo" secondAttribute="bottom" constant="5" id="zfT-Zj-WX9"/>

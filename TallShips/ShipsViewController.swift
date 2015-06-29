@@ -91,7 +91,6 @@ class ShipsViewController: UIViewController, UIPageViewControllerDataSource {
         
         if (pageViewController == self.profilePages) {
             if shipPage.index < self.items.count-1 {
-                
                 return shipControllerAtIndex(newIndex)
             }
         }

@@ -18,6 +18,7 @@ class ShipProfileViewController: ShipPageViewController {
     
     @IBOutlet weak var flagImageView: UIImageView?
     @IBOutlet weak var shipImageView: UIImageView?
+    @IBOutlet weak var shipImageViewActivityView: UIActivityIndicatorView?
     
     var height = 0 as CGFloat
     
@@ -28,13 +29,15 @@ class ShipProfileViewController: ShipPageViewController {
         self.locationLabel?.text = self.ship["subtitle"] as? String
         self.aboutText?.text = self.ship["about"] as? String
         self.typeLabel?.text = self.ship["shipType"] as? String
-        
+
+        self.shipImageViewActivityView?.startAnimating()
         let imageFile = self.ship["image"] as? PFFile
         if let imageFile = imageFile {
             imageFile.getDataInBackgroundWithBlock { (data, error) -> Void in
                 if let imageData = data {
                     let image = UIImage(data: imageData)
                     self.shipImageView?.image = image
+                    self.shipImageViewActivityView?.stopAnimating()
                 }
             }
         }

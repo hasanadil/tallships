@@ -1,0 +1,3 @@
+[submodule "Libs/UIColor-Hex-Swift"]
+	path = Libs/UIColor-Hex-Swift
+	url = git@github.com:yeahdongcn/UIColor-Hex-Swift.git

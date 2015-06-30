@@ -41,6 +41,9 @@
 		9F262D981B398D0A00E82E05 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F262D931B3989C700E82E05 /* ScheduleTableViewCell.swift */; };
 		9F262D9B1B398FB200E82E05 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F262D991B398FB200E82E05 /* TextViewController.swift */; };
 		9F262D9C1B398FB200E82E05 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F262D991B398FB200E82E05 /* TextViewController.swift */; };
+		9F7C51AA1B42D32C00349F2C /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C51A91B42D32C00349F2C /* MapsViewController.swift */; };
+		9F7C51AD1B42F76700349F2C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C51AC1B42F76700349F2C /* UIColorExtension.swift */; };
+		9F7C51AE1B42F7CD00349F2C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C51AC1B42F76700349F2C /* UIColorExtension.swift */; };
 		9F835DCE1B3DD763000038A4 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0CFFF81B311E0C00C91A7A /* NewsViewController.swift */; };
 		9FAECF231B378A8F00875E7F /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FAECF221B378A8F00875E7F /* NewsTableViewCell.xib */; };
 		9FAECF251B378AB100875E7F /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAECF241B378AB100875E7F /* NewsTableViewCell.swift */; };
@@ -91,6 +94,8 @@
 		9F262D931B3989C700E82E05 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleTableViewCell.swift; path = TallShips/ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		9F262D941B3989C700E82E05 /* ScheduleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleTableViewCell.xib; path = TallShips/ScheduleTableViewCell.xib; sourceTree = "<group>"; };
 		9F262D991B398FB200E82E05 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		9F7C51A91B42D32C00349F2C /* MapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
+		9F7C51AC1B42F76700349F2C /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = "Libs/UIColor-Hex-Swift/UIColorExtension.swift"; sourceTree = "<group>"; };
 		9FAECF221B378A8F00875E7F /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsTableViewCell.xib; path = TallShips/NewsTableViewCell.xib; sourceTree = "<group>"; };
 		9FAECF241B378AB100875E7F /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewCell.swift; path = TallShips/NewsTableViewCell.swift; sourceTree = "<group>"; };
 		9FD825B41B4179EF00873706 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
@@ -166,6 +171,7 @@
 				9F1BCBD81B2E17CC00E5103C /* ShipProfileViewController.swift */,
 				9F1BCBD51B2E14B000E5103C /* ShipsViewController.swift */,
 				9F262D991B398FB200E82E05 /* TextViewController.swift */,
+				9F7C51A91B42D32C00349F2C /* MapsViewController.swift */,
 			);
 			name = Controllers;
 			path = TallShips;
@@ -218,6 +224,7 @@
 		9F1BCBD41B2DEDF700E5103C /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				9F7C51AB1B42F75B00349F2C /* UIColor-Hex-Swift */,
 				9FD825B41B4179EF00873706 /* Fabric.framework */,
 				9FD825B51B4179EF00873706 /* Crashlytics.framework */,
 				9F1BCBFB1B2E328000E5103C /* ThirdParty */,
@@ -263,6 +270,14 @@
 				9F262D941B3989C700E82E05 /* ScheduleTableViewCell.xib */,
 			);
 			name = Nibs;
+			sourceTree = "<group>";
+		};
+		9F7C51AB1B42F75B00349F2C /* UIColor-Hex-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				9F7C51AC1B42F76700349F2C /* UIColorExtension.swift */,
+			);
+			name = "UIColor-Hex-Swift";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,8 +405,10 @@
 				9F262D951B3989C700E82E05 /* ScheduleTableViewCell.swift in Sources */,
 				9F1BCBAC1B2DE86D00E5103C /* AppDelegate.swift in Sources */,
 				9FAECF251B378AB100875E7F /* NewsTableViewCell.swift in Sources */,
+				9F7C51AA1B42D32C00349F2C /* MapsViewController.swift in Sources */,
 				9F1BCBDA1B2E17CC00E5103C /* ShipProfileViewController.swift in Sources */,
 				9F0CFFF91B311E0C00C91A7A /* NewsViewController.swift in Sources */,
+				9F7C51AD1B42F76700349F2C /* UIColorExtension.swift in Sources */,
 				9F1BCBD01B2DEAE500E5103C /* ScheduleViewController.swift in Sources */,
 				9F262D9B1B398FB200E82E05 /* TextViewController.swift in Sources */,
 			);
@@ -401,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F7C51AE1B42F7CD00349F2C /* UIColorExtension.swift in Sources */,
 				9FD9276C1B402CBC0024D843 /* ShipPageViewController.swift in Sources */,
 				9F835DCE1B3DD763000038A4 /* NewsViewController.swift in Sources */,
 				9F262D971B398D0A00E82E05 /* NewsTableViewCell.swift in Sources */,
@@ -539,6 +557,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TallShips/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "f8fb87b4-7653-4378-98b4-b4c7e25bb95f";
@@ -556,6 +575,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TallShips/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "f8fb87b4-7653-4378-98b4-b4c7e25bb95f";

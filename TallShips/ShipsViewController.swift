@@ -32,15 +32,20 @@ class ShipsViewController: UIViewController, UIPageViewControllerDataSource {
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[profilePagesView]|", options: nil, metrics: nil, views: views))
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[profilePagesView]|", options: nil, metrics: nil, views: views))
         
-        self.loadShips()
+        self.fetch()
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
     func tapTickets(sender: UIBarButtonItem) {
         UIApplication.sharedApplication().openURL(NSURL(string: "http://www.eventbrite.com/e/iberdrola-usa-tall-ships-portland-2015-tickets-tickets-16342218014?ref=ebtn")!)
     }
     
-    func loadShips() {
+    func fetch() {
         var query = PFQuery(className:"Ship")
+        query.orderByAscending("order")
         query.whereKey("city", equalTo:self.city)
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in

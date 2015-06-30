@@ -16,6 +16,9 @@ class ShipProfileViewController: ShipPageViewController {
     @IBOutlet weak var aboutText: UILabel?
     @IBOutlet weak var typeLabel: UILabel?
     
+    @IBOutlet weak var sponsorBackgroundView: UIView?
+    @IBOutlet weak var sponsorImageView: UIImageView?
+    
     @IBOutlet weak var flagImageView: UIImageView?
     @IBOutlet weak var shipImageView: UIImageView?
     @IBOutlet weak var shipImageViewActivityView: UIActivityIndicatorView?
@@ -40,6 +43,29 @@ class ShipProfileViewController: ShipPageViewController {
                     self.shipImageViewActivityView?.stopAnimating()
                 }
             }
+        }
+        
+        let sponsorImageFile = self.ship["sponsorImage"] as? PFFile
+        if let sponsorImageFile = sponsorImageFile {
+            sponsorImageFile.getDataInBackgroundWithBlock { (data, error) -> Void in
+                if let imageData = data {
+                    let image = UIImage(data: imageData)
+                    self.sponsorImageView?.image = image
+                }
+            }
+        }
+        
+        
+        let sponsorColor = self.ship["sponsorColor"] as? String
+        if let sponsorColor = sponsorColor {
+            var color = UIColor(rgba: sponsorColor)
+            self.sponsorBackgroundView?.backgroundColor = color
+        }
+        
+        let sponsorAddress = self.ship["sponsorAddress"] as? String
+        if let sponsorAddress = sponsorAddress {
+            self.sponsorImageView?.userInteractionEnabled = true
+            self.sponsorImageView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tapSponsor:"))
         }
         
         /*
@@ -76,6 +102,11 @@ class ShipProfileViewController: ShipPageViewController {
         about.appendAttributedString(aboutSubtitle)
         self.aboutText?.attributedText = about
         */
+    }
+    
+    func tapSponsor(gesture: UIGestureRecognizer) {
+        let sponsorAddress = self.ship["sponsorAddress"] as? String
+        UIApplication.sharedApplication().openURL(NSURL(string: sponsorAddress!)!)
     }
     
     /*

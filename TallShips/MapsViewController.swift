@@ -2,32 +2,23 @@
 //  MapsViewController.swift
 //  TallShips
 //
-//  Created by Hasan Adil on 6/30/15.
+//  Created by Hasan Adil on 7/1/15.
 //  Copyright (c) 2015 Hasan Adil. All rights reserved.
 //
 
 import UIKit
-import MapKit
 import Parse
 
-class MapsViewController: UIViewController {
+class MapsViewController: UITableViewController {
     
     let city = "pwm"
-    @IBOutlet weak var map: MKMapView?
+    var items = [] as [PFObject]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Filter", style: UIBarButtonItemStyle.Plain, target: self, action: "tapFilter:")
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tickets", style: UIBarButtonItemStyle.Plain, target: self, action: "tapTickets:")
         
-        let mapCenterCoordinate = CLLocationCoordinate2DMake(43.66057606, -70.24907112)
-        self.map?.setRegion(MKCoordinateRegionMakeWithDistance(mapCenterCoordinate, 1600, 1600), animated: true)
-        
         self.fetch()
-    }
-    
-    func tapFilter(sender: UIBarButtonItem) {
-        
     }
     
     func tapTickets(sender: UIBarButtonItem) {
@@ -35,28 +26,19 @@ class MapsViewController: UIViewController {
     }
     
     func fetch() {
-        var query = PFQuery(className:"Map")
+        var query = PFQuery(className:"MapFiles")
         query.whereKey("city", equalTo:self.city)
+        query.orderByAscending("order")
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in
-            
             if error == nil {
                 if let objects = objects as? [PFObject] {
                     for object in objects {
-                        let title = object["title"] as? String
-                        println(title)
-                        let subtitle = object["subtitle"] as? String
-                        let lat = object["lat"] as? NSNumber
-                        let lng = object["lng"] as? NSNumber
-                        
-                        let coordinate = CLLocationCoordinate2DMake(lat!.doubleValue, lng!.doubleValue)
-                        
-                        let annotation = MKPointAnnotation() as MKPointAnnotation
-                        annotation.title = title
-                        annotation.subtitle = subtitle
-                        annotation.coordinate = coordinate
-                        self.map?.addAnnotation(annotation)
+                        println(object.objectId)
                     }
+                    
+                    self.items = objects
+                    self.tableView.reloadData()
                 }
             } else {
                 // Log details of the failure
@@ -64,9 +46,47 @@ class MapsViewController: UIViewController {
             }
         }
     }
+
+    // MARK: - Table view data source
+
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        }
+        else if section == 1 {
+            return self.items.count
+        }
+        return 0
+    }
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+        if indexPath.section == 0 {
+            cell.textLabel?.text = "Live Map"
+        }
+        else if indexPath.section == 1 {
+            let object = self.items[indexPath.row] as PFObject
+            let title = object["title"] as? String
+            cell.textLabel?.text = title
+        }
+        return cell
+    }
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if indexPath.section == 0 {
+            let controller = self.storyboard?.instantiateViewControllerWithIdentifier("MapViewController") as! UIViewController
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+        else if indexPath.section == 1 {
+            let controller = self.storyboard?.instantiateViewControllerWithIdentifier("PDFViewController") as! PDFViewController
+            controller.object = self.items[indexPath.row]
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
 }
-
-
-
-
-

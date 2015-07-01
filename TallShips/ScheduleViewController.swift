@@ -91,7 +91,7 @@ class ScheduleViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let item = self.items[indexPath.section] as PFObject
         
-        let textController = self.storyboard?.instantiateViewControllerWithIdentifier("TextViewController") as!TextViewController
+        let textController = self.storyboard?.instantiateViewControllerWithIdentifier("TextViewController") as! TextViewController
         textController.textTitle = item["title"] as! String
         textController.text = item["detail"] as! String
         self.navigationController?.pushViewController(textController, animated: true)

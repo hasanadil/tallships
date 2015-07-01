@@ -50,6 +50,14 @@ class ShipProfileViewController: ShipPageViewController {
             sponsorImageFile.getDataInBackgroundWithBlock { (data, error) -> Void in
                 if let imageData = data {
                     let image = UIImage(data: imageData)
+                    
+                    let imageRect = CGRectMake(0, 0, image!.size.width, image!.size.height) as CGRect
+                    
+                    println(imageRect)
+                    if CGRectContainsRect(self.sponsorImageView!.bounds, imageRect) == true {
+                        self.sponsorImageView?.contentMode = UIViewContentMode.Bottom
+                    }
+                    
                     self.sponsorImageView?.image = image
                 }
             }

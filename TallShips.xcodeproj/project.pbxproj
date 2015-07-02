@@ -611,6 +611,7 @@
 				INFOPLIST_FILE = TallShipsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f8fb87b4-7653-4378-98b4-b4c7e25bb95f";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TallShips.app/TallShips";
 			};
 			name = Debug;
@@ -628,6 +629,7 @@
 				INFOPLIST_FILE = TallShipsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "acbb213f-9d1d-47a7-a6e5-b593a97477a6";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TallShips.app/TallShips";
 			};
 			name = Release;

@@ -68,6 +68,7 @@ class ShipProfileViewController: ShipPageViewController {
         if let sponsorColor = sponsorColor {
             var color = UIColor(rgba: sponsorColor)
             self.sponsorBackgroundView?.backgroundColor = color
+            self.view.backgroundColor = color
         }
         
         let sponsorAddress = self.ship["sponsorAddress"] as? String

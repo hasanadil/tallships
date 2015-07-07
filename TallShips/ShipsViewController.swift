@@ -16,6 +16,8 @@ class ShipsViewController: UIViewController, UIPageViewControllerDataSource {
     
     let profilePages = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil)
     
+    let activity = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,12 +28,19 @@ class ShipsViewController: UIViewController, UIPageViewControllerDataSource {
         profilePagesView?.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.view.addSubview(profilePagesView!)
         
+        self.activity.hidesWhenStopped = true
+        self.activity.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.view.addSubview(self.activity)
+        
         let views = Dictionary(dictionaryLiteral:
-            ("profilePagesView", profilePagesView)
+            ("profilePagesView", profilePagesView), ("activity", self.activity)
         )
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[profilePagesView]|", options: nil, metrics: nil, views: views))
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[profilePagesView]|", options: nil, metrics: nil, views: views))
+        self.view.addConstraint(NSLayoutConstraint(item: self.activity, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.CenterX, multiplier: 1.0, constant: 0))
+        self.view.addConstraint(NSLayoutConstraint(item: self.activity, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.CenterY, multiplier: 1.0, constant: 0))
         
+        self.activity.startAnimating()
         self.fetch()
     }
     
@@ -50,6 +59,7 @@ class ShipsViewController: UIViewController, UIPageViewControllerDataSource {
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             
+            self.activity.stopAnimating()
             if error == nil {
                 if let objects = objects as? [PFObject] {
                     for object in objects {
@@ -62,7 +72,6 @@ class ShipsViewController: UIViewController, UIPageViewControllerDataSource {
                     shipController.index = 0
                     shipController.ship = objects[0]
                     self.profilePages.setViewControllers([shipController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: { (result) -> Void in
-                        
                     })
                 }
             } else {

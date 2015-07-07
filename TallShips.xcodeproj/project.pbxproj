@@ -54,6 +54,8 @@
 		9FD825B71B4179EF00873706 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD825B51B4179EF00873706 /* Crashlytics.framework */; };
 		9FD9276B1B402C940024D843 /* ShipPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD9276A1B402C940024D843 /* ShipPageViewController.swift */; };
 		9FD9276C1B402CBC0024D843 /* ShipPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD9276A1B402C940024D843 /* ShipPageViewController.swift */; };
+		9FE2CDB31B4C0FBA00974BF6 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2CDB21B4C0FBA00974BF6 /* PlaceAnnotation.swift */; };
+		9FE2CDB71B4C122F00974BF6 /* MapKeyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2CDB61B4C122F00974BF6 /* MapKeyTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,8 @@
 		9FD825B41B4179EF00873706 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		9FD825B51B4179EF00873706 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		9FD9276A1B402C940024D843 /* ShipPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipPageViewController.swift; sourceTree = "<group>"; };
+		9FE2CDB21B4C0FBA00974BF6 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
+		9FE2CDB61B4C122F00974BF6 /* MapKeyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapKeyTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,8 @@
 				9F7C51A91B42D32C00349F2C /* MapViewController.swift */,
 				9F3950721B444E8C00B14182 /* MapsViewController.swift */,
 				9F3950741B44540C00B14182 /* PDFViewController.swift */,
+				9FE2CDB21B4C0FBA00974BF6 /* PlaceAnnotation.swift */,
+				9FE2CDB61B4C122F00974BF6 /* MapKeyTableViewController.swift */,
 			);
 			name = Controllers;
 			path = TallShips;
@@ -416,6 +422,7 @@
 				9F3950751B44540C00B14182 /* PDFViewController.swift in Sources */,
 				9F3950731B444E8C00B14182 /* MapsViewController.swift in Sources */,
 				9F1BCBAC1B2DE86D00E5103C /* AppDelegate.swift in Sources */,
+				9FE2CDB31B4C0FBA00974BF6 /* PlaceAnnotation.swift in Sources */,
 				9FAECF251B378AB100875E7F /* NewsTableViewCell.swift in Sources */,
 				9F7C51AA1B42D32C00349F2C /* MapViewController.swift in Sources */,
 				9F1BCBDA1B2E17CC00E5103C /* ShipProfileViewController.swift in Sources */,
@@ -423,6 +430,7 @@
 				9F7C51AD1B42F76700349F2C /* UIColorExtension.swift in Sources */,
 				9F1BCBD01B2DEAE500E5103C /* ScheduleViewController.swift in Sources */,
 				9F262D9B1B398FB200E82E05 /* TextViewController.swift in Sources */,
+				9FE2CDB71B4C122F00974BF6 /* MapKeyTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

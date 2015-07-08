@@ -72,6 +72,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let color = place.color
         
         let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+        pin.canShowCallout = true
         if color == "red" {
             pin.pinColor = MKPinAnnotationColor.Red
         }
@@ -81,7 +82,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         else if color == "purple" {
             pin.pinColor = MKPinAnnotationColor.Purple
         }
-        
         return pin
     }
 }

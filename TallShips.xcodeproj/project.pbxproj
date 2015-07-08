@@ -153,7 +153,6 @@
 		9F1BCB9D1B2DE86C00E5103C = {
 			isa = PBXGroup;
 			children = (
-				9F3950761B44548200B14182 /* WebKit.framework */,
 				9F1BCBB41B2DE86D00E5103C /* Images.xcassets */,
 				9F1BCBCD1B2DE9AB00E5103C /* Views */,
 				9F1BCBA81B2DE86D00E5103C /* Controllers */,
@@ -242,6 +241,7 @@
 			children = (
 				9F7C51AB1B42F75B00349F2C /* UIColor-Hex-Swift */,
 				9FD825B41B4179EF00873706 /* Fabric.framework */,
+				9F3950761B44548200B14182 /* WebKit.framework */,
 				9FD825B51B4179EF00873706 /* Crashlytics.framework */,
 				9F1BCBFB1B2E328000E5103C /* ThirdParty */,
 				9F1BCBFA1B2E327900E5103C /* Apple */,

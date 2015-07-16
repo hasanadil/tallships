@@ -70,6 +70,8 @@ class ScheduleViewController: UITableViewController {
         
         let formatter = NSDateFormatter() as NSDateFormatter
         formatter.dateStyle = NSDateFormatterStyle.FullStyle
+        formatter.timeZone = NSTimeZone(name: "GMT")
+        
         if allDay! == true {
             return formatter.stringFromDate(startDttm!)
         }
